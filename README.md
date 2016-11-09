@@ -1,5 +1,5 @@
-# react-es6-md-starter
-React 15.2.1, Babel, ES6 and Material UI 0.15.2 starter kit
+# react-redux-md-starter
+React 15.2.1, Redux, Babel, ES6 and Material UI 0.15.2 starter kit
 
 ## Getting started
 
@@ -17,6 +17,7 @@ Running a `gulp clean:dist` will remove the `dist/` folder. `gulp clean` is an a
 
 ## Useful links
 * [React Docs](https://facebook.github.io/react/docs/getting-started.html)
+* [Redux Homepage](http://redux.js.org/)
 * [Material UI Docs](http://www.material-ui.com/#/)
 * [ES2015 syntax](https://babeljs.io/docs/learn-es2015/)
 * [browserify Docs](https://github.com/substack/node-browserify#usage)

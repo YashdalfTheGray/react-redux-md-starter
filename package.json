@@ -1,7 +1,7 @@
 {
-  "name": "react-es6-md-starter",
+  "name": "react-redux-md-starter",
   "version": "1.0.0",
-  "description": "starter kit with react, es2015 support, material-ui and babel",
+  "description": "React, redux and MaterialUI starter pack",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,20 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YashdalfTheGray/react-es6-md-starter.git"
+    "url": "git+https://github.com/YashdalfTheGray/react-redux-md-starter.git"
   },
   "keywords": [
     "react",
     "es2015",
     "material-ui",
-    "babel"
+    "babel",
+    "redux"
   ],
   "author": "Yash Kulshrestha",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/YashdalfTheGray/react-es6-md-starter/issues"
+    "url": "https://github.com/YashdalfTheGray/react-redux-md-starter/issues"
   },
-  "homepage": "https://github.com/YashdalfTheGray/react-es6-md-starter#readme",
+  "homepage": "https://github.com/YashdalfTheGray/react-redux-md-starter#readme",
   "dependencies": {
     "chalk": "^1.1.3",
     "express": "^4.14.0",
