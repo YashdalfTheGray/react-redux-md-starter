@@ -1,0 +1,48 @@
+{
+  "name": "react-es6-md-starter",
+  "version": "1.0.0",
+  "description": "starter kit with react, es2015 support, material-ui and babel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YashdalfTheGray/react-es6-md-starter.git"
+  },
+  "keywords": [
+    "react",
+    "es2015",
+    "material-ui",
+    "babel"
+  ],
+  "author": "Yash Kulshrestha",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/YashdalfTheGray/react-es6-md-starter/issues"
+  },
+  "homepage": "https://github.com/YashdalfTheGray/react-es6-md-starter#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "express": "^4.14.0",
+    "material-ui": "^0.15.2",
+    "morgan": "^1.7.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-tap-event-plugin": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.7.6",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-util": "^3.0.7",
+    "nodemon": "^1.9.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
