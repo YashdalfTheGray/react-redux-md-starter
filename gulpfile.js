@@ -1,19 +1,19 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var os = require('os');
-var chalk = require('chalk');
-var del = require('del');
-var nodemon = require('gulp-nodemon');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
+"use strict";
+
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const os = require('os');
+const chalk = require('chalk');
+const del = require('del');
+const nodemon = require('gulp-nodemon');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const eslint = require('gulp-eslint');
 
 gulp.task('default', ['usage']);
 
 gulp.task('usage', function() {
-    "use strict";
-
-    var usageLines = [
+    const usageLines = [
         '',
         '',
         chalk.green('usage'),
@@ -50,8 +50,6 @@ gulp.task('usage', function() {
 });
 
 gulp.task('start', ['build'], function() {
-    "use strict";
-
     nodemon({
         script: 'server/server.js',
         watch: 'server/server.js',
@@ -60,8 +58,6 @@ gulp.task('start', ['build'], function() {
 });
 
 gulp.task('serve', function() {
-    "use strict";
-
     nodemon({
         script: 'server/server.js',
         watch: 'server/server.js',
@@ -72,15 +68,11 @@ gulp.task('serve', function() {
 gulp.task('build', ['copyfiles', 'buildjsx']);
 
 gulp.task('watch', ['build'], function() {
-    "use strict";
-
     gulp.watch('src/**/*.jsx', ['buildjsx']);
 });
 
 gulp.task('copyfiles', function() {
-    "use strict";
-
-    gulp.src([
+    return gulp.src([
         'src/**/*',
         '!src/**/*.jsx'
     ])
@@ -88,8 +80,6 @@ gulp.task('copyfiles', function() {
 });
 
 gulp.task('buildjsx', function() {
-    "use strict";
-
     return browserify({
         entries: 'src/bootstrap.jsx',
         extensions: ['.jsx'],
@@ -101,15 +91,18 @@ gulp.task('buildjsx', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean:dist', function() {
-    "use strict";
+gulp.task('lint', function() {
+    return gulp.src(['server/**/*.js', 'src/**/*.jsx', 'src/**/*.js', 'gulpfile.js'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
 
+gulp.task('clean:dist', function() {
     return del('dist');
 });
 
 gulp.task('clean:modules', function() {
-    "use strict";
-
     return del('node_modules');
 });
 

@@ -11,6 +11,10 @@ Running `gulp` will print out the common tasks for the project. To get started, 
 
 If not in active development, `gulp start` (or `npm start`) will build the project and start the node server. For active development, `gulp watch` and `gulp serve` are suggested as they rebuild the client code on changes to the `*.jsx` and the server code on changes to `server/server.js`.
 
+## Linting
+
+You can lint all the project files using either `npm run lint` or `gulp lint`. This project uses `eslint` and the rules are located in `.eslintrc.js`. 
+
 ## Cleaning
 
 Running a `gulp clean:dist` will remove the `dist/` folder. `gulp clean` is an alias for `gulp clean:dist`. The `node_modules` folder can be cleaned up using `gulp clean:modules` and both the build folder and the node modules folder can be cleaned up using `gulp clean:all`.
