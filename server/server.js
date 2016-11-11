@@ -1,7 +1,3 @@
-/* global require */
-/* global __dirname */
-// jshint esversion: 6
-
 var path = require('path');
 var express = require('express');
 var morgan = require('morgan');
