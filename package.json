@@ -48,6 +48,7 @@
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
     "gulp-nodemon": "^2.0.6",
+    "gulp-tape": "0.0.9",
     "gulp-util": "^3.0.7",
     "nodemon": "^1.9.1",
     "redux-devtools": "^3.3.1",
