@@ -9,6 +9,8 @@ const nodemon = require('gulp-nodemon');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const eslint = require('gulp-eslint');
+const tape = require('gulp-tape');
+const tapMin = require('tap-min');
 
 gulp.task('default', ['usage']);
 
@@ -89,6 +91,13 @@ gulp.task('buildjsx', function() {
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('test', function() {
+    return gulp.src(['src/**/*.spec.js', 'server/**/*.spec.js'])
+    .pipe(tape({
+        reporter: tapMin()
+    }));
 });
 
 gulp.task('lint', function() {
