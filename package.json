@@ -6,7 +6,9 @@
   "scripts": {
     "test": "gulp test",
     "start": "gulp start",
-    "lint": "gulp lint"
+    "lint": "gulp lint",
+    "server": "gulp serve",
+    "watcher": "gulp watch"
   },
   "repository": {
     "type": "git",
