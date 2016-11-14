@@ -21,7 +21,7 @@ Running a `gulp clean:dist` will remove the `dist/` folder. `gulp clean` is an a
 
 ## `npm` aliases
 
-There are npm aliases for common `gulp` tasks as well. They are listed in the following table
+There are `npm` aliases for common `gulp` tasks as well. They are listed in the following table
 
 | `gulp` command | `npm` command     |
 |----------------|-------------------|

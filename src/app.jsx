@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import injectTapEventPlugin from  'react-tap-event-plugin';
 import AppBar from 'material-ui/AppBar';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -22,4 +24,9 @@ class App extends React.Component {
     }
 }
 
-export default App;
+injectTapEventPlugin();
+
+ReactDOM.render(
+    <App phrase="ES2015" />,
+    document.getElementById('react-container')
+);

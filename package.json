@@ -2,7 +2,7 @@
   "name": "react-redux-md-starter",
   "version": "1.0.0",
   "description": "React, redux and MaterialUI starter pack",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "gulp test",
     "start": "gulp start",

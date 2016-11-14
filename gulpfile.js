@@ -89,7 +89,7 @@ gulp.task('copyfiles', function() {
 
 gulp.task('buildjsx', function() {
     return browserify({
-        entries: 'src/bootstrap.jsx',
+        entries: 'src/app.jsx',
         extensions: ['.jsx'],
         debug: true
     })
