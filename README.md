@@ -13,11 +13,23 @@ If not in active development, `gulp start` (or `npm start`) will build the proje
 
 ## Linting
 
-You can lint all the project files using either `npm run lint` or `gulp lint`. This project uses `eslint` and the rules are located in `.eslintrc.js`. 
+You can lint all the project files using either `npm run lint` or `gulp lint`. This project uses `eslint` and the rules are located in `.eslintrc.js`.
 
 ## Cleaning
 
 Running a `gulp clean:dist` will remove the `dist/` folder. `gulp clean` is an alias for `gulp clean:dist`. The `node_modules` folder can be cleaned up using `gulp clean:modules` and both the build folder and the node modules folder can be cleaned up using `gulp clean:all`.
+
+## `npm` aliases
+
+There are npm aliases for common `gulp` tasks as well. They are listed in the following table
+
+| `gulp` command | `npm` command     |
+|----------------|-------------------|
+| `gulp start`   | `npm start`       |
+| `gulp test`    | `npm test`        |
+| `gulp serve`   | `npm run server`  |
+| `gulp watch`   | `npm run watcher` |
+| `gulp lint`    | `npm run linter`  |
 
 ## Useful links
 * [React Docs](https://facebook.github.io/react/docs/getting-started.html)

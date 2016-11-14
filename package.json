@@ -6,7 +6,7 @@
   "scripts": {
     "test": "gulp test",
     "start": "gulp start",
-    "lint": "gulp lint",
+    "linter": "gulp lint",
     "server": "gulp serve",
     "watcher": "gulp watch"
   },
