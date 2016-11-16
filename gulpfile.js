@@ -73,21 +73,22 @@ gulp.task('serve', function() {
     });
 });
 
-gulp.task('build', ['copyfiles', 'buildjsx']);
+gulp.task('build', ['copyfiles', 'buildjs']);
 
 gulp.task('watch', ['build'], function() {
-    gulp.watch('src/**/*.jsx', ['buildjsx']);
+    gulp.watch(['src/**/*.jsx', 'src/**/*.js'], ['buildjs']);
 });
 
 gulp.task('copyfiles', function() {
     return gulp.src([
         'src/**/*',
-        '!src/**/*.jsx'
+        '!src/**/*.jsx',
+        '!src/**/*.js'
     ])
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('buildjsx', function() {
+gulp.task('buildjs', function() {
     return browserify({
         entries: 'src/app.jsx',
         extensions: ['.jsx'],
