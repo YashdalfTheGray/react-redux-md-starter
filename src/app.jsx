@@ -6,6 +6,8 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+import app from './stores/app';
+
 const lightMuiTheme = getMuiTheme(lightBaseTheme);
 
 class App extends React.Component {
@@ -17,7 +19,7 @@ class App extends React.Component {
         return (
             <MuiThemeProvider muiTheme={lightMuiTheme}>
                 <AppBar
-                    title="React Starter"
+                    title={app.store.getState().message}
                     onLeftIconButtonTouchTap={this.navMenuClick} />
             </MuiThemeProvider>
         );
@@ -27,6 +29,6 @@ class App extends React.Component {
 injectTapEventPlugin();
 
 ReactDOM.render(
-    <App phrase="ES2015" />,
+    <App />,
     document.getElementById('react-container')
 );
