@@ -11,6 +11,7 @@ const source = require('vinyl-source-stream');
 const eslint = require('gulp-eslint');
 const tape = require('gulp-tape');
 const tapMin = require('tap-min');
+const babel = require('gulp-babel');
 
 gulp.task('default', ['usage']);
 
@@ -100,11 +101,17 @@ gulp.task('buildjs', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('test', function() {
-    return gulp.src(['src/**/*.spec.js', 'server/**/*.spec.js'])
+gulp.task('test', ['testbuild'], function() {
+    return gulp.src(['test/**/*.spec.js', 'server/**/*.spec.js'])
     .pipe(tape({
         reporter: tapMin()
     }));
+});
+
+gulp.task('testbuild', ['clean:test'], function() {
+    return gulp.src('src/**/*.js')
+    .pipe(babel({ presets: ['es2015'] }))
+    .pipe(gulp.dest('test/client'));
 });
 
 gulp.task('lint', function() {
@@ -116,6 +123,10 @@ gulp.task('lint', function() {
 
 gulp.task('clean:dist', function() {
     return del('dist');
+});
+
+gulp.task('clean:test', function() {
+    return del('test');
 });
 
 gulp.task('clean:modules', function() {
