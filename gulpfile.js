@@ -15,7 +15,7 @@ const babel = require('gulp-babel');
 
 gulp.task('default', ['usage']);
 
-gulp.task('usage', function() {
+gulp.task('usage', () => {
     const usageLines = [
         '',
         '',
@@ -58,7 +58,7 @@ gulp.task('usage', function() {
     gutil.log(usageLines.join(os.EOL));
 });
 
-gulp.task('start', ['build'], function() {
+gulp.task('start', ['build'], () => {
     nodemon({
         script: 'server/server.js',
         watch: 'server/server.js',
@@ -66,7 +66,7 @@ gulp.task('start', ['build'], function() {
     });
 });
 
-gulp.task('serve', function() {
+gulp.task('serve', () => {
     nodemon({
         script: 'server/server.js',
         watch: 'server/server.js',
@@ -76,11 +76,11 @@ gulp.task('serve', function() {
 
 gulp.task('build', ['copyfiles', 'buildjs']);
 
-gulp.task('watch', ['build'], function() {
+gulp.task('watch', ['build'], () => {
     gulp.watch(['src/**/*.jsx', 'src/**/*.js'], ['buildjs']);
 });
 
-gulp.task('copyfiles', function() {
+gulp.task('copyfiles', () => {
     return gulp.src([
         'src/**/*',
         '!src/**/*.jsx',
@@ -89,7 +89,7 @@ gulp.task('copyfiles', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('buildjs', function() {
+gulp.task('buildjs', () => {
     return browserify({
         entries: 'src/app.jsx',
         extensions: ['.jsx'],
@@ -101,35 +101,35 @@ gulp.task('buildjs', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('test', ['testbuild'], function() {
+gulp.task('test', ['testbuild'], () => {
     return gulp.src(['test/**/*.spec.js', 'server/**/*.spec.js'])
     .pipe(tape({
         reporter: tapMin()
     }));
 });
 
-gulp.task('testbuild', ['clean:test'], function() {
+gulp.task('testbuild', ['clean:test'], () => {
     return gulp.src('src/**/*.js')
     .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('test/client'));
 });
 
-gulp.task('lint', function() {
+gulp.task('lint', () => {
     return gulp.src(['server/**/*.js', 'src/**/*.jsx', 'src/**/*.js', 'gulpfile.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('clean:dist', function() {
+gulp.task('clean:dist', () => {
     return del('dist');
 });
 
-gulp.task('clean:test', function() {
+gulp.task('clean:test', () => {
     return del('test');
 });
 
-gulp.task('clean:modules', function() {
+gulp.task('clean:modules', () => {
     return del('node_modules');
 });
 
