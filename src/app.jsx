@@ -8,6 +8,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import app from './stores/app';
 
+import MessageDisplay from './components/MessageDisplay';
+
 const lightMuiTheme = getMuiTheme(lightBaseTheme);
 
 class App extends React.Component {
@@ -18,9 +20,12 @@ class App extends React.Component {
     render() {
         return (
             <MuiThemeProvider muiTheme={lightMuiTheme}>
-                <AppBar
-                    title={app.store.getState().message}
-                    onLeftIconButtonTouchTap={this.navMenuClick} />
+                <div>
+                    <AppBar
+                        title={app.store.getState().message}
+                        onLeftIconButtonTouchTap={this.navMenuClick} />
+                    <MessageDisplay message="Sup redux?!" />
+                </div>
             </MuiThemeProvider>
         );
     }
