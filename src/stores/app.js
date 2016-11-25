@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 
 const initialState = {
-    message: 'Redux Starter'
+    message: 'Hello world!'
 };
 
 const actions = {
@@ -24,4 +24,4 @@ const app = (state = initialState, action) => {
 
 const store = createStore(app);
 
-export default { store, actions };
+export { store, actions };
