@@ -6,8 +6,7 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import app from './stores/app';
-
+import { store } from './stores/app';
 import MessageDisplay from './components/MessageDisplay';
 
 const lightMuiTheme = getMuiTheme(lightBaseTheme);
@@ -18,13 +17,17 @@ class App extends React.Component {
     }
 
     render() {
+        const globalFontStyle = {
+            fontFamily: 'Roboto, sans-serif'
+        };
+
         return (
             <MuiThemeProvider muiTheme={lightMuiTheme}>
-                <div>
+                <div style={globalFontStyle}>
                     <AppBar
-                        title={app.store.getState().message}
+                        title="Redux Starter"
                         onLeftIconButtonTouchTap={this.navMenuClick} />
-                    <MessageDisplay message="Sup redux?!" />
+                    <MessageDisplay />
                 </div>
             </MuiThemeProvider>
         );
