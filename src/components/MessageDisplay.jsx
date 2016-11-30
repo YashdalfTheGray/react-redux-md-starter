@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, CardTitle, CardText } from 'material-ui/Card';
+import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/FlatButton';
 
 import { store, actions } from '../stores/app';
 import { marginMedium } from '../styles';
@@ -35,6 +36,12 @@ class MessageDisplay extends React.Component {
                         fullWidth={true}
                         onChange={e => store.dispatch(actions.updateMessage(e.target.value))} />
                 </CardText>
+                <CardActions>
+                    <FlatButton
+                        label="Reset Message"
+                        primary={true}
+                        onTouchTap={e => store.dispatch(actions.resetMessage())} />
+                </CardActions>
             </Card>
         );
     }
