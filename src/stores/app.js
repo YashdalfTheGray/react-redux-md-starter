@@ -14,7 +14,6 @@ const actions = {
     resetMessage: () => {
         return {
             type: 'reset_message',
-            message: 'Hello World!'
         }
     }
 };
